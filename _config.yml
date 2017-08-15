@@ -44,6 +44,12 @@ avatar: "/img/parsa-squared.jpg"
 # then specify the following parameter
 # title-img: "/img/parsa-squared.jpg"
 
+
+# --- Collections --- #
+collections:
+  - people
+
+
 # --- Footer options --- #
 
 # Change all these values or delete the ones you don't want.
