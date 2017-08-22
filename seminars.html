@@ -1,0 +1,59 @@
+---
+layout: page
+title: Seminars
+---
+
+<div class="posts-list">
+  {% for seminar in site.seminars reversed %}
+  <article class="post-preview">
+    <a href="{{ seminar.memento }}">
+	  <h2 class="post-title">{{ seminar.title }}</h2>
+
+	  {% if seminar.subtitle %}
+	  <h3 class="post-subtitle">
+	    {{ seminar.subtitle }}
+	  </h3>
+	  {% endif %}
+    </a>
+
+    <p class="post-meta">
+        By
+        <a href="{{ seminar.speaker-web }}">
+            {{ seminar.speaker }}
+        </a>
+        on {{ seminar.date | date: "%B %-d, %Y" }}
+    </p>
+
+    <div class="post-entry-container">
+      {% if seminar.image %}
+      <div class="post-image">
+        <a href="{{ seminar.memento }}">
+          <img src="{{ site.baseurl }}/img/seminars/{{seminar.image }}">
+        </a>
+      </div>
+      {% endif %}
+      <div class="post-entry">
+        {{ seminar.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
+        {% assign excerpt_word_count = seminar.excerpt | number_of_words %}
+        {% if seminar.content != seminar.excerpt or excerpt_word_count > site.excerpt_length %}
+          <a href="{{ seminar.memento }}" class="post-read-more">[Read&nbsp;More]</a>
+        {% endif %}
+        </div>
+    </div>
+
+    {% if seminar.tags.size > 0 %}
+    <div class="blog-tags">
+      Tags:
+      {% if site.link-tags %}
+      {% for tag in seminar.tags %}
+      <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+      {% else %}
+        {{ seminar.tags | join: ", " }}
+      {% endif %}
+    </div>
+    {% endif %}
+
+   </article>
+  {% endfor %}
+</div>

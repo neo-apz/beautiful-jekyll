@@ -27,7 +27,7 @@ navbar-links:
   People: "people"
   Projects: "projects"
   Publications: "aboutme"
-  Seminars: "aboutme"
+  Seminars: "seminars"
   Courses: "aboutme"
   Blog: "blog"
   # Resources:
@@ -49,6 +49,7 @@ avatar: "/img/parsa-squared.jpg"
 collections:
   - people
   - projects
+  - seminars
 
 
 # --- Footer options --- #
