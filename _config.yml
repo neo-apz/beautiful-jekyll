@@ -25,7 +25,7 @@ description: Parallel Systems Architecture Lab
 navbar-links:
   # About Me: "aboutme"
   People: "people"
-  Projects: "aboutme"
+  Projects: "projects"
   Publications: "aboutme"
   Seminars: "aboutme"
   Courses: "aboutme"
@@ -48,6 +48,7 @@ avatar: "/img/parsa-squared.jpg"
 # --- Collections --- #
 collections:
   - people
+  - projects
 
 
 # --- Footer options --- #

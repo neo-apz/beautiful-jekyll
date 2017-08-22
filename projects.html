@@ -1,0 +1,48 @@
+---
+layout: page
+title: Projects
+---
+
+<div class="posts-list">
+  {% for project in site.projects %}
+  <article class="post-preview">
+    <a href="{{ project.website }}">
+	  <h2 class="post-title">{{ project.title }}</h2>
+
+	  {% if project.subtitle %}
+	  <h3 class="post-subtitle">
+	    {{ project.subtitle }}
+	  </h3>
+	  {% endif %}
+    </a>
+
+    <div class="post-entry-container">
+      {% if project.image %}
+      <div class="post-image">
+        <a href="{{ project.website }}">
+          <img src="{{ site.baseurl }}/img/projects/{{project.image }}">
+        </a>
+      </div>
+      {% endif %}
+      <div class="post-entry">
+          {{ project.excerpt }}
+          <a href="{{ project.website }}" class="post-read-more">[Read&nbsp;More]</a>
+      </div>
+    </div>
+
+    {% if project.tags.size > 0 %}
+    <div class="blog-tags">
+      Tags:
+      {% if site.link-tags %}
+      {% for tag in project.tags %}
+      <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+      {% else %}
+        {{ project.tags | join: ", " }}
+      {% endif %}
+    </div>
+    {% endif %}
+
+   </article>
+  {% endfor %}
+</div>
